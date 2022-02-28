@@ -35,7 +35,7 @@ function About() {
             <Typography variant="h5">Sobre</Typography>
             <Divider />
             <Stack direction="column">
-              <Typography variant="h6">info</Typography>
+              <Typography variant="h6"></Typography>
             </Stack>
           </CardContent>
         );

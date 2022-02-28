@@ -64,13 +64,23 @@ export default function Profile() {
     console.log(data);
   }, []);
 
+  const userInfos = [
+    {
+      picture:
+        "https://img.freepik.com/vetores-gratis/astronauta-bonito-com-desenhos-animados-da-paz-da-mao-conceito-de-icone-de-tecnologia-espacial-isolado-estilo-flat-cartoon_138676-2184.jpg?size=338&ext=jpg",
+      name: "Daniel Tavares",
+      profession: "Engenheiro",
+      email: "daniel@gmail.com",
+    },
+  ];
+
   return (
     <div className={classes.root}>
       <Grid container>
         <Grid xs={2}></Grid>
         <Grid xs={8} className={classes.firstGrid}>
           <Card>
-            {[data].map((item) => {
+            {userInfos.map((item) => {
               return (
                 <Grid container>
                   <Grid xs={4}></Grid>
@@ -82,7 +92,9 @@ export default function Profile() {
                       alignItems="center"
                       spacing={1}
                     >
-                      <Avatar className={classes.avatar}>{item.name[0]}</Avatar>
+                      <Avatar className={classes.avatar} src={item.picture}>
+                        {item.name[0]}
+                      </Avatar>
                       <Typography variant="h5">{item.name}</Typography>
                       <Typography variant="h6">
                         {item.profession ? item.profession : null}
@@ -136,12 +148,3 @@ export default function Profile() {
     </div>
   );
 }
-const userInfos = [
-  {
-    picture:
-      "https://img.freepik.com/vetores-gratis/astronauta-bonito-com-desenhos-animados-da-paz-da-mao-conceito-de-icone-de-tecnologia-espacial-isolado-estilo-flat-cartoon_138676-2184.jpg?size=338&ext=jpg",
-    name: "daniel",
-    profession: "engenheiro",
-    email: "daniel@gmail.com",
-  },
-];

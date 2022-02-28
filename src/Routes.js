@@ -10,6 +10,7 @@ import CompanyVacancies from "./pages/companies/companyVacancies";
 import SignUpUser from "./pages/signupUser";
 import Header from "./components/header";
 import SettingsUser from "./pages/user/profile/settingsUser";
+import Login from "./pages/login";
 
 const routes = () => {
   return (
@@ -38,6 +39,14 @@ const routes = () => {
             <>
               <Header />
               <Profile />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Login />
             </>
           }
         />

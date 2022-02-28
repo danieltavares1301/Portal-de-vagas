@@ -28,30 +28,47 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Vacancies() {
   const classes = useStyles();
+  const vagas = [
+    {
+      id: 1,
+      picture:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png",
+      empresa: "Tech SA",
+      nome: "engenharia",
+      local: "São Paulo - SP",
+    },
+  ];
   return (
     <div>
       <Grid container lg={12} alignItems="center">
         <Grid lg={3}></Grid>
         <Grid lg={6}>
           <Card className={classes.card}>
-            <CardActionArea>
-              <Grid container>
-                <Grid lg={2}>
-                  <Stack
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                  >
-                    <Avatar className={classes.avatar}></Avatar>
-                  </Stack>
-                </Grid>
-                <Stack className={classes.infos} spacing={1}>
-                  <Typography>Nome da empresa</Typography>
-                  <Typography>Nome da vaga</Typography>
-                  <Typography>Local da vaga</Typography>
-                </Stack>
-              </Grid>
-            </CardActionArea>
+            {vagas.map((item) => {
+              return (
+                <CardActionArea>
+                  <Grid container>
+                    <Grid lg={2}>
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <Avatar
+                          className={classes.avatar}
+                          src={item.picture}
+                        ></Avatar>
+                      </Stack>
+                    </Grid>
+                    <Stack className={classes.infos} spacing={1}>
+                      <Typography>{item.empresa}</Typography>
+                      <Typography>{item.nome}</Typography>
+                      <Typography>{item.local}</Typography>
+                    </Stack>
+                  </Grid>
+                </CardActionArea>
+              );
+            })}
           </Card>
         </Grid>
         <Grid lg={3}></Grid>
